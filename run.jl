@@ -101,14 +101,14 @@ function main()
       # This is a hack to store both the elapsed time and result of running the solver.
       # Unfortunately, BenchmarkTools has no equivalent to @timed
       global ref = Ref{Any}()
-      trial = @benchmark(x = solve_vrp($(n)), setup = (x = nothing), teardown = (ref[] = x))
+      trial = @benchmark(x = solve_mip($(n)), setup = (x = nothing), teardown = (ref[] = x))
 
       dt = median(trial)
       E, x = ref[]
 
       @info "Trial" n trial dt
       println("Trial $(n), $(dt)")
-      open("result-$(MODE)-$(JOBID).csv", write = true, append = true) do io
+      open("result-mip-$(MODE)-$(JOBID).csv", write = true, append = true) do io
         write(io, "$(n),$(E),$(dt)\n")
       end
     catch err
