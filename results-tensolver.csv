@@ -1,4 +1,4 @@
-window,nvar,ten_obj,ten_time
+vrp_window,num_variables,objective,mtime(s)
 16,10,4437.1484,0.052708181
 21,27,54547.688,0.321041126
 26,49,37613.188,1.62087718
