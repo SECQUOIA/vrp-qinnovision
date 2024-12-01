@@ -45,7 +45,7 @@ end
 read_rudy(fn::String) = read_rudy(Float32, fn)
 
 function solve_vrp(n::Int)
-  fname  = "vrp-as-qubo/TestSet/test_pb_$(n)_o.rudy"
+  fname  = "TestSet/test_pb_$(n)_o.rudy"
 
   Q, cte = read_rudy(fname)
   # Regularization for Kernel
@@ -68,7 +68,7 @@ function solve_vrp(n::Int)
 end
 
 function solve_mip(n::Int)
-  fname  = "vrp-as-qubo/TestSet/test_pb_$(n)_o.rudy"
+  fname  = "TestSet/test_pb_$(n)_o.rudy"
 
   Q, c = read_rudy(fname)
 
