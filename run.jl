@@ -1,6 +1,6 @@
 using LinearAlgebra, Random
 using TenSolver
-using JuMP, Gurobi, IsingSolvers
+using JuMP, Gurobi, HiGHS, IsingSolvers
 using BenchmarkTools
 
 if haskey(ENV, "SLURM_JOB_PARTITION") && ENV["SLURM_JOB_PARTITION"] == "gpu"
@@ -72,17 +72,17 @@ function solve_mip(n::Int)
 
   Q, c = read_rudy(fname)
 
-  m = Model(Gurobi.Optimizer)
+  # m = Model(Gurobi.Optimizer)
   # Alternative using an Open Source Solver
-  # m = Model(IsingSolvers.ILP.Optimizer)
-  # set_attribute(m, "mip_solver", HiGHS.Optimizer)
+  m = Model(IsingSolvers.ILP.Optimizer)
+  set_attribute(m, "mip_solver", HiGHS.Optimizer)
   @variable m x[1:n] Bin
 
   @objective m Min dot(x, Q, x) + c
 
   optimize!(m)
 
-  return objective_value(m)
+  return objective_value(m), value.(x)
 end
 
 function main()
