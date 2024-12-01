@@ -72,10 +72,8 @@ function solve_mip(n::Int)
 
   Q, c = read_rudy(fname)
 
-  # m = Model(Gurobi.Optimizer)
+  m = Model(Gurobi.Optimizer)
   # Alternative using an Open Source Solver
-  m = Model(IsingSolvers.ILP.Optimizer)
-  set_attribute(m, "mip_solver", HiGHS.Optimizer)
   @variable m x[1:n] Bin
 
   @objective m Min dot(x, Q, x) + c
