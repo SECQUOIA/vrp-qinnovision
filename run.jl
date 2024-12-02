@@ -73,7 +73,8 @@ function solve_mip(n::Int)
   Q, c = read_rudy(fname)
 
   m = Model(Gurobi.Optimizer)
-  # Alternative using an Open Source Solver
+  set_attribute(m, "TimeLimit", 1000)
+  # Alternative using a MIP Solver
   @variable m x[1:n] Bin
 
   @objective m Min dot(x, Q, x) + c
