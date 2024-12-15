@@ -28,7 +28,7 @@ import json
 base_dir = os.getcwd()
 
 # Set the path to vrp-matrices directory
-vrp_matrices_dir = os.path.join(base_dir, 'vrp_matrices_qubo/TestSet')
+vrp_matrices_dir = os.path.join(base_dir, 'TestSet')
 
 # Full path to the .rudy file
 rudy_file_path = os.path.join(vrp_matrices_dir, 'test_pb_10_o.rudy')
