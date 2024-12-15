@@ -23,12 +23,11 @@ import json
 
 # In[3]:
 
-
-# Set base directory
-base_dir = '/mnt/c/Users/rames102/Desktop/Codes'
+# Set base directory to the script's directory
+base_dir = os.path.dirname(__file__)
 
 # Set the path to vrp-matrices directory
-vrp_matrices_dir = os.path.join(base_dir, 'vrp_matrices_qubo/TestSet')
+vrp_matrices_dir = os.path.join(base_dir, 'TestSet')
 
 # Full path to the .rudy file
 rudy_file_path = os.path.join(vrp_matrices_dir, 'test_pb_27_o.rudy')
