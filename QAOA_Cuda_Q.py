@@ -24,7 +24,7 @@ from typing import Tuple
 
 
 # Set base directory
-base_dir = os.path.dirname(__file__)
+base_dir = os.getcwd()
 
 # Set the path to vrp-matrices directory
 vrp_matrices_dir = os.path.join(base_dir, 'TestSet')
