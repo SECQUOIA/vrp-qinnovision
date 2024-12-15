@@ -5,8 +5,10 @@ This repository contains the code and resources used for the Qinnovision World C
 ## Folder Structure
 
 - **`TestSet/`**: Contains Q matrices representing VRP instances used for testing and benchmarking. Instances generated from https://github.com/smharwood/vrp-as-qubo
-- **`QAOA_Cuda_Q.ipynb`**: Jupyter Notebook implementation of QAOA using CUDA-Q for solving Max-Cut problems.
-- **`QAOA_Cuda_Q.py`**: Python script to solve the QUBO instances derived from VRP using QAOA.\
+- **`QAOA_Cuda_Q.ipynb`**: Jupyter Notebook implementation of QAOA using CUDA-Q for solving Max-Cut problems using decomposition.
+- **`QAOA_Cuda_Q.py`**: Python script to solve the QUBO instances derived from VRP using QAOA using decomposition.
+- **`VRP_Challenge.ipynb`**: Jupyter Notebook implementation of QAOA using CUDA-Q for solving Max-Cut problems.
+- **`VRP_Challenge.py`**: Python script to solve the QUBO instances derived from VRP using QAOA.
 - **`results-tensolver.csv`**: Contains results of the tensor-based solver TenSolver.jl for QUBO instances.
 - **`run.jl`**: Julia script for running instances and generating additional results.
 
