@@ -23,8 +23,8 @@ import json
 
 # In[3]:
 
-# Set base directory to the script's directory
-base_dir = os.path.dirname(__file__)
+# Set base directory
+base_dir = os.getcwd()
 
 # Set the path to vrp-matrices directory
 vrp_matrices_dir = os.path.join(base_dir, 'TestSet')
